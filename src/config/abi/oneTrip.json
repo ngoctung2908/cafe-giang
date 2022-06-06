@@ -1,0 +1,705 @@
+[
+    {
+        "type": "constructor",
+        "stateMutability": "nonpayable",
+        "inputs": []
+    },
+    {
+        "type": "event",
+        "inputs": [
+            {
+                "type": "address",
+                "internalType": "address",
+                "name": "owner",
+                "indexed": true
+            },
+            {
+                "internalType": "address",
+                "indexed": true,
+                "name": "spender",
+                "type": "address"
+            },
+            {
+                "name": "value",
+                "internalType": "uint256",
+                "type": "uint256",
+                "indexed": false
+            }
+        ],
+        "anonymous": false,
+        "name": "Approval"
+    },
+    {
+        "type": "event",
+        "inputs": [
+            {
+                "name": "operator",
+                "internalType": "address",
+                "type": "address",
+                "indexed": true
+            },
+            {
+                "type": "uint256",
+                "indexed": false,
+                "name": "previousRate",
+                "internalType": "uint256"
+            },
+            {
+                "type": "uint256",
+                "internalType": "uint256",
+                "name": "newRate",
+                "indexed": false
+            }
+        ],
+        "name": "MaxTransferAmountRateUpdated",
+        "anonymous": false
+    },
+    {
+        "name": "OperatorTransferred",
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": true,
+                "internalType": "address",
+                "name": "previousOperator",
+                "type": "address"
+            },
+            {
+                "indexed": true,
+                "internalType": "address",
+                "name": "newOperator",
+                "type": "address"
+            }
+        ],
+        "type": "event"
+    },
+    {
+        "inputs": [
+            {
+                "type": "address",
+                "name": "previousOwner",
+                "indexed": true,
+                "internalType": "address"
+            },
+            {
+                "internalType": "address",
+                "indexed": true,
+                "type": "address",
+                "name": "newOwner"
+            }
+        ],
+        "anonymous": false,
+        "type": "event",
+        "name": "OwnershipTransferred"
+    },
+    {
+        "type": "event",
+        "anonymous": false,
+        "name": "SetTokenStrategy",
+        "inputs": [
+            {
+                "name": "_by",
+                "type": "address",
+                "indexed": false,
+                "internalType": "address"
+            },
+            {
+                "indexed": false,
+                "type": "address",
+                "internalType": "address",
+                "name": "_TokenStrategy"
+            }
+        ]
+    },
+    {
+        "type": "event",
+        "anonymous": false,
+        "name": "Transfer",
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "from",
+                "indexed": true,
+                "type": "address"
+            },
+            {
+                "internalType": "address",
+                "type": "address",
+                "indexed": true,
+                "name": "to"
+            },
+            {
+                "internalType": "uint256",
+                "type": "uint256",
+                "name": "value",
+                "indexed": false
+            }
+        ]
+    },
+    {
+        "inputs": [
+            {
+                "name": "operator",
+                "indexed": true,
+                "internalType": "address",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "name": "previousRate",
+                "internalType": "uint256",
+                "type": "uint256"
+            },
+            {
+                "type": "uint256",
+                "internalType": "uint256",
+                "name": "newRate",
+                "indexed": false
+            }
+        ],
+        "name": "TransferTaxRateUpdated",
+        "type": "event",
+        "anonymous": false
+    },
+    {
+        "stateMutability": "view",
+        "inputs": [],
+        "outputs": [
+            {
+                "type": "address",
+                "name": "",
+                "internalType": "address"
+            }
+        ],
+        "name": "BURN_ADDRESS",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "outputs": [
+            {
+                "name": "",
+                "type": "uint16",
+                "internalType": "uint16"
+            }
+        ],
+        "type": "function",
+        "name": "MAXIMUM_TRANSFER_TAX_RATE",
+        "stateMutability": "view"
+    },
+    {
+        "inputs": [],
+        "type": "function",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "view",
+        "name": "MAX_SUPPLY"
+    },
+    {
+        "stateMutability": "view",
+        "type": "function",
+        "name": "TokenStrategy",
+        "inputs": [],
+        "outputs": [
+            {
+                "name": "",
+                "type": "address",
+                "internalType": "address"
+            }
+        ]
+    },
+    {
+        "type": "function",
+        "outputs": [
+            {
+                "name": "",
+                "type": "bool",
+                "internalType": "bool"
+            }
+        ],
+        "name": "_excludedFromAntiWhale",
+        "inputs": [
+            {
+                "type": "address",
+                "internalType": "address",
+                "name": ""
+            }
+        ],
+        "stateMutability": "view"
+    },
+    {
+        "type": "function",
+        "outputs": [
+            {
+                "type": "bool",
+                "internalType": "bool",
+                "name": ""
+            }
+        ],
+        "inputs": [
+            {
+                "type": "address",
+                "name": "",
+                "internalType": "address"
+            }
+        ],
+        "stateMutability": "view",
+        "name": "_excludedFromTax"
+    },
+    {
+        "outputs": [
+            {
+                "internalType": "uint16",
+                "name": "",
+                "type": "uint16"
+            }
+        ],
+        "type": "function",
+        "inputs": [],
+        "stateMutability": "view",
+        "name": "maxTransferAmountRate"
+    },
+    {
+        "type": "function",
+        "outputs": [
+            {
+                "type": "address",
+                "internalType": "address",
+                "name": ""
+            }
+        ],
+        "inputs": [],
+        "stateMutability": "view",
+        "name": "owner"
+    },
+    {
+        "type": "function",
+        "name": "renounceOwnership",
+        "inputs": [],
+        "stateMutability": "nonpayable",
+        "outputs": []
+    },
+    {
+        "type": "function",
+        "inputs": [
+            {
+                "type": "address",
+                "internalType": "address",
+                "name": "newOwner"
+            }
+        ],
+        "name": "transferOwnership",
+        "outputs": [],
+        "stateMutability": "nonpayable"
+    },
+    {
+        "outputs": [
+            {
+                "internalType": "uint16",
+                "type": "uint16",
+                "name": ""
+            }
+        ],
+        "type": "function",
+        "stateMutability": "view",
+        "inputs": [],
+        "name": "transferTaxRate"
+    },
+    {
+        "stateMutability": "view",
+        "name": "getOwner",
+        "inputs": [],
+        "outputs": [
+            {
+                "type": "address",
+                "name": "",
+                "internalType": "address"
+            }
+        ],
+        "type": "function"
+    },
+    {
+        "name": "name",
+        "outputs": [
+            {
+                "internalType": "string",
+                "type": "string",
+                "name": ""
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function",
+        "inputs": []
+    },
+    {
+        "inputs": [],
+        "stateMutability": "view",
+        "outputs": [
+            {
+                "type": "uint8",
+                "internalType": "uint8",
+                "name": ""
+            }
+        ],
+        "type": "function",
+        "name": "decimals"
+    },
+    {
+        "type": "function",
+        "inputs": [],
+        "stateMutability": "view",
+        "name": "symbol",
+        "outputs": [
+            {
+                "internalType": "string",
+                "name": "",
+                "type": "string"
+            }
+        ]
+    },
+    {
+        "type": "function",
+        "stateMutability": "view",
+        "outputs": [
+            {
+                "type": "uint256",
+                "name": "",
+                "internalType": "uint256"
+            }
+        ],
+        "inputs": [],
+        "name": "totalSupply"
+    },
+    {
+        "type": "function",
+        "name": "balanceOf",
+        "inputs": [
+            {
+                "name": "account",
+                "internalType": "address",
+                "type": "address"
+            }
+        ],
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "view"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "type": "address",
+                "name": "recipient"
+            },
+            {
+                "internalType": "uint256",
+                "name": "amount",
+                "type": "uint256"
+            }
+        ],
+        "name": "transfer",
+        "type": "function",
+        "outputs": [
+            {
+                "name": "",
+                "type": "bool",
+                "internalType": "bool"
+            }
+        ],
+        "stateMutability": "nonpayable"
+    },
+    {
+        "stateMutability": "view",
+        "name": "allowance",
+        "type": "function",
+        "inputs": [
+            {
+                "name": "owner",
+                "type": "address",
+                "internalType": "address"
+            },
+            {
+                "internalType": "address",
+                "name": "spender",
+                "type": "address"
+            }
+        ],
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "type": "uint256",
+                "name": ""
+            }
+        ]
+    },
+    {
+        "type": "function",
+        "outputs": [
+            {
+                "name": "",
+                "type": "bool",
+                "internalType": "bool"
+            }
+        ],
+        "stateMutability": "nonpayable",
+        "name": "approve",
+        "inputs": [
+            {
+                "type": "address",
+                "internalType": "address",
+                "name": "spender"
+            },
+            {
+                "name": "amount",
+                "internalType": "uint256",
+                "type": "uint256"
+            }
+        ]
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "sender",
+                "type": "address"
+            },
+            {
+                "type": "address",
+                "name": "recipient",
+                "internalType": "address"
+            },
+            {
+                "type": "uint256",
+                "name": "amount",
+                "internalType": "uint256"
+            }
+        ],
+        "stateMutability": "nonpayable",
+        "outputs": [
+            {
+                "type": "bool",
+                "internalType": "bool",
+                "name": ""
+            }
+        ],
+        "type": "function",
+        "name": "transferFrom"
+    },
+    {
+        "stateMutability": "nonpayable",
+        "name": "increaseAllowance",
+        "outputs": [
+            {
+                "internalType": "bool",
+                "name": "",
+                "type": "bool"
+            }
+        ],
+        "type": "function",
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "spender",
+                "type": "address"
+            },
+            {
+                "internalType": "uint256",
+                "name": "addedValue",
+                "type": "uint256"
+            }
+        ]
+    },
+    {
+        "inputs": [
+            {
+                "type": "address",
+                "internalType": "address",
+                "name": "spender"
+            },
+            {
+                "type": "uint256",
+                "internalType": "uint256",
+                "name": "subtractedValue"
+            }
+        ],
+        "outputs": [
+            {
+                "name": "",
+                "type": "bool",
+                "internalType": "bool"
+            }
+        ],
+        "type": "function",
+        "stateMutability": "nonpayable",
+        "name": "decreaseAllowance"
+    },
+    {
+        "type": "function",
+        "stateMutability": "nonpayable",
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "type": "uint256",
+                "name": "_amount"
+            }
+        ],
+        "name": "burn",
+        "outputs": []
+    },
+    {
+        "name": "inCaseTokensGetStuck",
+        "type": "function",
+        "outputs": [],
+        "inputs": [
+            {
+                "type": "address",
+                "name": "_token",
+                "internalType": "contract IBEP20"
+            }
+        ],
+        "stateMutability": "nonpayable"
+    },
+    {
+        "inputs": [
+            {
+                "name": "_TokenStrategy",
+                "internalType": "address",
+                "type": "address"
+            }
+        ],
+        "stateMutability": "nonpayable",
+        "name": "setTokenStrategy",
+        "type": "function",
+        "outputs": []
+    },
+    {
+        "inputs": [
+            {
+                "name": "_transferAmount",
+                "type": "uint256",
+                "internalType": "uint256"
+            }
+        ],
+        "outputs": [
+            {
+                "type": "uint256",
+                "internalType": "uint256",
+                "name": ""
+            }
+        ],
+        "stateMutability": "view",
+        "name": "taxBaseOnAmount",
+        "type": "function"
+    },
+    {
+        "type": "function",
+        "name": "maxTransferAmount",
+        "outputs": [
+            {
+                "name": "",
+                "type": "uint256",
+                "internalType": "uint256"
+            }
+        ],
+        "stateMutability": "view",
+        "inputs": []
+    },
+    {
+        "stateMutability": "nonpayable",
+        "name": "updateTransferTaxRate",
+        "outputs": [],
+        "type": "function",
+        "inputs": [
+            {
+                "type": "uint16",
+                "internalType": "uint16",
+                "name": "_transferTaxRate"
+            }
+        ]
+    },
+    {
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "name": "updateMaxTransferAmountRate",
+        "type": "function",
+        "inputs": [
+            {
+                "internalType": "uint16",
+                "type": "uint16",
+                "name": "_maxTransferAmountRate"
+            }
+        ]
+    },
+    {
+        "type": "function",
+        "name": "setExcludedFromAntiWhale",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "inputs": [
+            {
+                "internalType": "address",
+                "type": "address",
+                "name": "_account"
+            },
+            {
+                "internalType": "bool",
+                "type": "bool",
+                "name": "_excluded"
+            }
+        ]
+    },
+    {
+        "name": "setExcludedFromTax",
+        "outputs": [],
+        "type": "function",
+        "stateMutability": "nonpayable",
+        "inputs": [
+            {
+                "type": "address",
+                "name": "_account",
+                "internalType": "address"
+            },
+            {
+                "name": "_excluded",
+                "internalType": "bool",
+                "type": "bool"
+            }
+        ]
+    },
+    {
+        "stateMutability": "view",
+        "type": "function",
+        "name": "operator",
+        "inputs": [],
+        "outputs": [
+            {
+                "type": "address",
+                "internalType": "address",
+                "name": ""
+            }
+        ]
+    },
+    {
+        "stateMutability": "nonpayable",
+        "type": "function",
+        "name": "transferOperator",
+        "inputs": [
+            {
+                "type": "address",
+                "name": "newOperator",
+                "internalType": "address"
+            }
+        ],
+        "outputs": []
+    }
+]
